@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+header {
+  background-color: var(--accent-color);
+  
+  padding: 20px 0;
+  margin-bottom: 10px;
+  
+}
+
+.header-container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header-container a {
+  color: var(--link-text-color);
+  text-decoration: none;
+}
+
+.add-car__btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
+  color: var(--link-text-color);
+}
+
+.add-car__btn:hover {
+  color: var(--link-text-color-hover);
+}

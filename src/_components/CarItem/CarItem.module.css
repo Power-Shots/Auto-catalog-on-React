@@ -1,0 +1,39 @@
+.item {
+    display: flex;
+    
+}
+
+.item .imgBlock {
+    width: 25%;
+}
+
+.item .imgBlock img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item .info {
+    padding: 0 10px;
+}
+
+.item .info .editBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--link-text-color);
+    background-color: var(--accent-color);
+    border-radius: 10px;
+}
+
+.item .info .editBtn:hover {
+    background-color: var(--accent-color-hover);
+}
+
+.item .info p {
+    padding-bottom: 5px;
+    text-align: left;
+}
