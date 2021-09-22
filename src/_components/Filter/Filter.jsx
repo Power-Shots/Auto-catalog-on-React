@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
-import carData from "../../dataBase/CarsData";
 import { v4 as uuidv4 } from "uuid";
 import MySelect from "../../_UI/MySelect/MySelect";
+import LocalStorageService from "../../_services/LocalStorageServices/LocalStorageService";
 
-const Filter = ({ clearFilter, selectedCategory, setSelectedCategory },) => {
+const Filter = ({ selectedCategory, setSelectedCategory },) => {
   const [uniqueOptions, setUniqueOptions] = useState({
     brand: ["All"],
     year: ["All"],
-  });  
-
+  });
+  
+  const carsList = LocalStorageService.getAllCars();
 
   useEffect(() => {
     let optionsObj = {};
 
     for (let option in uniqueOptions) {
       let optSet = new Set();
-      for (let i = 0; i < carData.length; i++) {
-        optSet.add(carData[i][option]);
+      for (let i = 0; i < carsList.length; i++) {
+        optSet.add(carsList[i][option]);
       }
 
       optionsObj = {

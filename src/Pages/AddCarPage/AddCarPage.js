@@ -2,6 +2,7 @@ import React, { createRef, useState, useEffect } from 'react';
 import {withRouter} from 'react-router-dom';
 import carData from '../../dataBase/CarsData';
 import CarForm from '../../_components/Forms/CarForm/CarForm';
+import LocalStorageService from '../../_services/LocalStorageServices/LocalStorageService';
 
 const AddCarPage = (props) => {
 
@@ -14,9 +15,7 @@ const AddCarPage = (props) => {
 
     const addNewCar = () => {
         if(newCar.brand !== ''){
-            console.log('add')
-            console.log(carData)
-            carData.push(newCar);
+            LocalStorageService.addCar(newCar);
             props.history.push('/')
         }
     }

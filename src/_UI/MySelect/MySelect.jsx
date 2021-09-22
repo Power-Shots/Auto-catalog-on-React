@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react/cjs/react.development';
 import { v4 as uuidv4 } from 'uuid';
 
 const MySelect = (props) => {

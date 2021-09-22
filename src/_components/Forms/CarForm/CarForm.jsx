@@ -5,19 +5,15 @@ import {
     Route,
     useParams
   } from "react-router-dom";
-import { useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react/cjs/react.development';
 import { v4 as uuidv4 } from 'uuid';
-import carData from '../../../dataBase/CarsData';
+import LocalStorageService from '../../../_services/LocalStorageServices/LocalStorageService';
 
 const CarForm = ({car, setCar, deleteCar}) => {
     
     let { id } = useParams();
-    console.log(`car form ${id}`)
 
-    const [currentCar, setCurrentCar] = useState(
-        id
-        ? carData.filter(item => item.id === id)
-        : {brand: '', year: '', price: '', img: ''}
+    const [currentCar, setCurrentCar] = useState({brand: '', year: '', price: '', img: ''}
     )
 
     const regEx = {
@@ -32,6 +28,12 @@ const CarForm = ({car, setCar, deleteCar}) => {
         priceInp: createRef(),
         imgInp: createRef(),
     }
+
+    useEffect(()=> {
+        if(id){
+            setCurrentCar(LocalStorageService.getCarById(id))
+        }
+    },[id])
 
     const validation = (car) => {
         for(let key in car){

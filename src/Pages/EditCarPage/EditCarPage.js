@@ -8,28 +8,31 @@ import {
 import {withRouter} from 'react-router-dom';
 import carData from '../../dataBase/CarsData';
 import CarForm from '../../_components/Forms/CarForm/CarForm';
+import LocalStorageService from '../../_services/LocalStorageServices/LocalStorageService';
 
 const EditCarPage = (props) => {
     let { id } = useParams();
 
-    const [currentCar, setCurrentCar] = useState(carData.filter(item => item.id === id));
+    const [currentCar, setCurrentCar] = useState({});
 
     useEffect(()=> {
         if(currentCar.id){
-            editCar()        }
+            editCar()        
+        }
     }, [currentCar])
 
     const deleteCar = (e) => {
         e.preventDefault();
+        const isDelete = window.confirm(`Удалить?`);
         
-        let index= carData.findIndex(item => item.id === id);
-        carData.splice(index,1);
-        props.history.push('/')
+        if(isDelete){
+            LocalStorageService.deleteCarById(id)
+            props.history.push('/')
+        } 
     }
 
     const editCar = (e) => {
-        let index = carData.findIndex(item => item.id === id);
-        carData[index] = currentCar;
+        LocalStorageService.editCar(id, currentCar);
         props.history.push('/');
     }
 
