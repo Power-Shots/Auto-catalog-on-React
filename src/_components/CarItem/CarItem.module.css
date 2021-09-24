@@ -1,10 +1,7 @@
 .item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 30% 1fr;
     
-}
-
-.item .imgBlock {
-    width: 25%;
 }
 
 .item .imgBlock img {
@@ -18,7 +15,10 @@
 }
 
 .item .info .editBtn {
-    display: flex;
+    max-width: 200px;
+    position: relative;
+    bottom: 0;
+    display: flex;    
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -30,6 +30,7 @@
 }
 
 .item .info .editBtn:hover {
+    color: var(--link-text-color-hover);
     background-color: var(--accent-color-hover);
 }
 

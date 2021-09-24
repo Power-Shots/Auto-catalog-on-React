@@ -1,0 +1,28 @@
+.carForm {
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 0 15px;
+}
+
+.formBtns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formBtns .btn {
+    width: 100%;
+    margin: 0 10px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--accent-color);
+    color: var(--link-text-color);
+}
+
+.formBtns .btn:hover {
+    color: var(--link-text-color-hover);
+    background-color: var(--accent-color-hover);
+}
+

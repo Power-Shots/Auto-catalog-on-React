@@ -1,4 +1,4 @@
-import carData from "../../dataBase/CarsData";
+import carsData from "../../dataBase/carsData.json";
 
 const LocalStorageService = {
 
@@ -9,8 +9,8 @@ const LocalStorageService = {
             return carsList;
         }
         else{
-            LocalStorageService.postCarsList(carData);
-            return carData;
+            LocalStorageService.postCarsList(carsData);
+            return carsData;
         }
     },
 
@@ -44,10 +44,10 @@ const LocalStorageService = {
 
     editCar: (id, car) => {
         if(id && car){
-            let data = LocalStorageService.getAllCars();
-            let index = data.findIndex(item => item.id === id);
-            data[index] = car;
-            LocalStorageService.postCarsList(data);
+            let carsList = LocalStorageService.getAllCars();
+            let index = carsList.findIndex(item => item.id === id);
+            carsList[index] = car;
+            LocalStorageService.postCarsList(carsList);
         }
         else {throw ( new Error('Не удалось отредактировать') )}
     },

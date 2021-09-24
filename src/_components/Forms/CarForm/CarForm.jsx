@@ -7,38 +7,57 @@ import {
   } from "react-router-dom";
 import { useEffect, useState } from 'react/cjs/react.development';
 import { v4 as uuidv4 } from 'uuid';
+import s from './CarForm.module.css'
 import LocalStorageService from '../../../_services/LocalStorageServices/LocalStorageService';
+import FormControl from '../../../_UI/FormControl/FormControl';
 
 const CarForm = ({car, setCar, deleteCar}) => {
     
     let { id } = useParams();
 
-    const [currentCar, setCurrentCar] = useState({brand: '', year: '', price: '', img: ''}
-    )
+    const [currentCar, setCurrentCar] = useState({
+        brand: "",
+        model: "",
+        year: "",
+        color: "",
+        engine: "",
+        price: "",
+        img: "",
+        description: ""
+    });
 
     const regEx = {
-        brand: /^[a-zA-Z -]{1,}$/,
+        brand: /^[a-zA-Zа-яА-ЯёЁ -]{1,}$/,
+        model: /^[a-zA-Zа-яА-ЯёЁ0-9 -]{1,}$/,
+        color: /^[a-zA-Zа-яА-ЯёЁ -]{1,}$/,
         year: /^[0-9]{4}$/,
+        engine: /^[0-9.,]{1,4}$/,
         price: /^[0-9]{1,8}$/,
+        img: /^[a-zA-Zа-яА-Я0-9 -_./'"]{1,}$/,
+        description: /^[a-zA-Zа-яА-Я0-9 -_./'"]{1,}$/
     }
 
     const formInputs = {
         brandInp: createRef(),
+        modelInp: createRef(),
         yearInp: createRef(),
+        colorInp: createRef(),
+        engineInp: createRef(),
         priceInp: createRef(),
         imgInp: createRef(),
+        descriptionInp: createRef(),
     }
 
     useEffect(()=> {
         if(id){
-            setCurrentCar(LocalStorageService.getCarById(id))
+            setCurrentCar(LocalStorageService.getCarById(id));
         }
     },[id])
 
     const validation = (car) => {
         for(let key in car){
             if( !regEx[key].test(car[key]) ){
-                console.log(`${key}: Ошибка`)
+                console.log(`${key}: Ошибка`);
                 return false;
             }
         }
@@ -47,51 +66,85 @@ const CarForm = ({car, setCar, deleteCar}) => {
     }
 
     const submit = (e) => {
-        e.preventDefault()
+        console.log(formInputs.brandInp.current.value)
+        e.preventDefault();
         let newCar = {
             brand: formInputs.brandInp.current.value,
+            model: formInputs.modelInp.current.value,
             year: formInputs.yearInp.current.value,
+            color: formInputs.colorInp.current.value,
+            engine: formInputs.engineInp.current.value,
             price: formInputs.priceInp.current.value,
-        }
+            img: formInputs.imgInp.current.value.replace(/^.*\\/, ""),
+            description: formInputs.descriptionInp.current.value
+        };
         let isValid = validation(newCar);
-        newCar.img = formInputs.imgInp.current.value.replace(/^.*\\/, "");
-        newCar.id = uuidv4()
+        newCar.id = uuidv4();
 
-        if(isValid === true){
+        if(isValid === true && newCar.img !== ''){
             setCar(newCar);
         }
     }
 
 
     return (
-        <div>
-            <form>
-                    <div className="form-control">
-                        <label htmlFor="brand">Марка: </label>
-                        <input defaultValue={currentCar.brand} ref={formInputs.brandInp} type="text"/>
-                    </div>
-                    <div className="form-control">
-                        <label htmlFor="year">Год: </label>
-                        <input defaultValue={currentCar.year} ref={formInputs.yearInp} type="text"/>
-                    </div>
-                    <div className="form-control">
-                        <label htmlFor="price">Цена: </label>
-                        <input defaultValue={currentCar.price} ref={formInputs.priceInp} type="text"/>
-                    </div>
-                    <div className="form-control">
-                        <label htmlFor="img">Фото: </label>
-                        <input defaultValue={currentCar.img} ref={formInputs.imgInp} type="file"/>
-                    </div>
-                    <div className="form-control">
-                        <input onClick={submit} type="submit" value="Отправить"/> 
-                        {id
-                        ? <button onClick={e=> deleteCar(e)}>Удалить</button>
-                        : ''
-                        }
-                    </div>
+            <form className={s.carForm}>
+                <FormControl id="brand"
+                             labelText="Марка"
+                             defaultValue={currentCar.brand} 
+                             refLink={formInputs.brandInp} 
+                             type="text"/>
 
-                </form>
-        </div>
+                <FormControl id="model"
+                             labelText="Модель"
+                             defaultValue={currentCar.model} 
+                             refLink={formInputs.modelInp} 
+                             type="text"/>
+
+                <FormControl id="year"
+                             labelText="Год Выпуска"
+                             defaultValue={currentCar.year} 
+                             refLink={formInputs.yearInp} 
+                             type="number"/>
+
+                <FormControl id="color"
+                             labelText="Цвет"
+                             defaultValue={currentCar.color} 
+                             refLink={formInputs.colorInp} 
+                             type="text"/>
+
+                <FormControl id="engine"
+                             labelText="Обьём двигателя в л"
+                             defaultValue={currentCar.engine} 
+                             refLink={formInputs.engineInp} 
+                             type="number"/>
+
+                <FormControl id="price"
+                             labelText="Цена"
+                             defaultValue={currentCar.price} 
+                             refLink={formInputs.priceInp} 
+                             type="number"/>
+
+                <FormControl id="description"
+                             labelText="Описание"
+                             defaultValue={currentCar.description} 
+                             refLink={formInputs.descriptionInp} 
+                             type="textarea"/>
+
+                <FormControl id="img"
+                             labelText="Фото"
+                             defaultValue={currentCar.img} 
+                             refLink={formInputs.imgInp} 
+                             type="file"/>
+
+                <div className={s.formBtns}>
+                    <input className={s.btn} onClick={submit} type="submit" value="Отправить"/> 
+                    {id
+                    ? <button className={s.btn} onClick={e=> deleteCar(e)}>Удалить</button>
+                    : ''
+                    }
+                </div>
+            </form>
     )
 }
 

@@ -34,3 +34,9 @@ header {
 .add-car__btn:hover {
   color: var(--link-text-color-hover);
 }
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}

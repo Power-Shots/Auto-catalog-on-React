@@ -5,6 +5,7 @@ import CarsList from '../../_components/CarsList/CarsList';
 import Filter from '../../_components/Filter/Filter';
 import { useEffect } from 'react/cjs/react.development';
 import LocalStorageService from '../../_services/LocalStorageServices/LocalStorageService';
+import SortService from '../../_services/SortService/SortService';
 
 
 
@@ -12,14 +13,19 @@ const CarGalleryPage = () => {
     
     const carsList = LocalStorageService.getAllCars();
     const [filtredCarsList, setFiltredCarsList] = useState(LocalStorageService.getAllCars())
-    const [selectedCategory, setSelectedCategory] = useState({
-      brand: "All",
-      year: "All",
-    });
+    const [selectedCategory, setSelectedCategory] = useState(
+      {
+        brand: "All",
+        year: "All",
+        color: "All",
+        engine: "All",
+      });
+      
+    const [sortedBy, setSortedBy] = useState({value:'brand', key:'brand', reverse: false})
     
     useEffect(()=> {
       applyFilter()
-    }, [selectedCategory])
+    }, [selectedCategory, sortedBy])
 
     const applyFilter = () => {
         let preparatoryArr = [];
@@ -39,6 +45,9 @@ const CarGalleryPage = () => {
               preparatoryArr.push(carsList[i])
           }
         }
+        
+        preparatoryArr = SortService.sortObjs(preparatoryArr, sortedBy.key, sortedBy.reverse);
+
         setFiltredCarsList(preparatoryArr)
       };
 
@@ -47,6 +56,8 @@ const CarGalleryPage = () => {
         <div className="home">
            <div className={s.wrapper}>
                 <Filter key={uuidv4()}
+                sortedBy={sortedBy}
+                setSortedBy={setSortedBy}
                 selectedCategory={selectedCategory} 
                 setSelectedCategory={setSelectedCategory}/>
 

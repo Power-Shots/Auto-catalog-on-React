@@ -1,0 +1,10 @@
+.filter {
+    border: 1px solid rgba(3, 3, 3, 0.295);
+}
+
+.formGroup {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: left;
+    padding: 5px;
+}

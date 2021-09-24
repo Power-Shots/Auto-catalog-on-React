@@ -6,7 +6,6 @@ import {
   useParams
 } from "react-router-dom";
 import {withRouter} from 'react-router-dom';
-import carData from '../../dataBase/CarsData';
 import CarForm from '../../_components/Forms/CarForm/CarForm';
 import LocalStorageService from '../../_services/LocalStorageServices/LocalStorageService';
 
@@ -40,7 +39,7 @@ const EditCarPage = (props) => {
         <div>
            <h2>Edit car</h2>
             <div className="wrapper">
-                <CarForm car={currentCar} setCar={setCurrentCar} deleteCar={deleteCar}/>
+                <CarForm setCar={setCurrentCar} deleteCar={deleteCar}/>
             </div> 
         </div>
     )

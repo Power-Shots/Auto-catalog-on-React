@@ -9,10 +9,6 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-import carData from '../../dataBase/CarsData';
-import CarsList from '../CarsList/CarsList';
-import Filter from '../Filter/Filter';
-import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle} from '@fortawesome/free-solid-svg-icons'
@@ -30,13 +26,13 @@ function App() {
       <Router>
       <header>
         <div className="header-container">
-          <h1><Link to="/">Auto catalog</Link></h1>
+          <h1><Link to="/">Auto catalog on React</Link></h1>
             <Link className="add-car__btn" to={'/add-car'}>
               <FontAwesomeIcon icon={faPlusCircle}/>
             </Link>
         </div>
       </header>
-      <main>
+      <main className="main-content">
           <Switch>
             <Route exact path="/" component={CarGalleryPage}/>
             <Route path="/add-car" component={AddCarPage}/>
