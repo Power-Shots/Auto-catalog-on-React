@@ -5,7 +5,8 @@
 }
 
 :root {
-  --accent-color: rgb(88, 88, 173);
+  --body-bg-color: rgb(12, 12, 37);
+  --accent-color: rgba(88, 88, 173, 1);
   --accent-color-hover: rgb(57, 57, 133);
   --link-text-color: rgb(223, 223, 223);
   --link-text-color-hover: rgb(255, 255, 255);

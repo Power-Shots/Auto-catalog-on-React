@@ -9,7 +9,7 @@ const Filter = ({ selectedCategory, setSelectedCategory, sortedBy, setSortedBy }
     brand: ["All"],
     year: ["All"],
     color: ["All"],
-    engine: ["All"]
+    engine: ["All"],
   });
   
   const carsList = LocalStorageService.getAllCars();
@@ -24,7 +24,6 @@ const Filter = ({ selectedCategory, setSelectedCategory, sortedBy, setSortedBy }
       }
 
       optSet = [...optSet].sort();
-      console.log(optSet)
       optionsObj[`${option}`] = [...uniqueOptions[option], ...optSet];
       
     }
@@ -41,7 +40,7 @@ const Filter = ({ selectedCategory, setSelectedCategory, sortedBy, setSortedBy }
 
   return (
     <div className={s.filter}>
-      <div className="sortBlock">
+      <div className={s.sortBlock}>
         <select value={sortedBy.value} onChange={e => changeSort(e.target.value)}>
           <option value="brand">От А до Я</option>
           <option value="brand,reverse">От Я до А</option>
@@ -84,7 +83,7 @@ const Filter = ({ selectedCategory, setSelectedCategory, sortedBy, setSortedBy }
       </div>
       
       <div className={s.formGroup}>
-        <label htmlFor="engine">Двигатель л: </label>
+        <label htmlFor="engine">Объём двигателя:</label>
         <MySelect
           key={uuidv4()}
           id={`engine`}

@@ -6,6 +6,8 @@ import Filter from '../../_components/Filter/Filter';
 import { useEffect } from 'react/cjs/react.development';
 import LocalStorageService from '../../_services/LocalStorageServices/LocalStorageService';
 import SortService from '../../_services/SortService/SortService';
+import PriceSlider from '../../_components/PriceSlider/PriceSlider';
+
 
 
 
@@ -21,11 +23,33 @@ const CarGalleryPage = () => {
         engine: "All",
       });
       
-    const [sortedBy, setSortedBy] = useState({value:'brand', key:'brand', reverse: false})
+    const [sortedBy, setSortedBy] = useState({value:'brand', key:'brand', reverse: false});
+    const [priceValue, setPriceValue] = useState({
+      currentPrice: {min: 0, max: 100},
+      defaultPrice: {min: 0, max: 100}
+    });
+
+    useEffect(()=> {
+      
+      getMaxPrice();
+    }, []);
     
     useEffect(()=> {
-      applyFilter()
-    }, [selectedCategory, sortedBy])
+      applyFilter();
+    }, [selectedCategory, sortedBy, priceValue])
+
+    const getMaxPrice = () => {
+      console.log('popopoiiug')
+      let priceArr = [];
+      for(let i=0; i<carsList.length; i++){
+        priceArr.push(carsList[i].price);
+      }
+
+      setPriceValue({ 
+       currentPrice: {min: Math.min(...priceArr), max: Math.max(...priceArr) },
+       defaultPrice: {min: 0, max: Math.max(...priceArr) }
+      });
+    }
 
     const applyFilter = () => {
         let preparatoryArr = [];
@@ -39,6 +63,12 @@ const CarGalleryPage = () => {
             ) {
                 isValid = false;
             }
+          }
+
+          
+          if(carsList[i].price< priceValue.currentPrice.min
+            || carsList[i].price>priceValue.currentPrice.max ){
+              isValid = false;
           }
     
           if(isValid === true){
@@ -54,20 +84,30 @@ const CarGalleryPage = () => {
 
     return (
         <div className="home">
-           <div className={s.wrapper}>
-                <Filter key={uuidv4()}
-                sortedBy={sortedBy}
-                setSortedBy={setSortedBy}
-                selectedCategory={selectedCategory} 
-                setSelectedCategory={setSelectedCategory}/>
+          <div className={s.wrapper}>
+            <div>
+              <Filter key={uuidv4()}
+                  sortedBy={sortedBy}
+                  setSortedBy={setSortedBy}
+                  selectedCategory={selectedCategory} 
+                  setSelectedCategory={setSelectedCategory}/>
 
-                <div className="cars-gallery">
-                    {filtredCarsList.length===0
-                     ?<h1>Нет результатов</h1>
-                     :<CarsList key={uuidv4()} carsArr={filtredCarsList}/>
-                    }
-                </div>
-            </div> 
+              <PriceSlider
+                currentPrice={priceValue.currentPrice}
+                price={priceValue}
+                setPrice={setPriceValue}
+                maxDefaultValue={priceValue.defaultPrice.max}
+              />
+            </div>
+
+            <div className="cars-gallery">
+                {filtredCarsList.length===0
+                  ?<h2>Нет результатов</h2>
+                  :<CarsList key={uuidv4()} carsArr={filtredCarsList}/>
+                }
+            </div>
+
+          </div> 
         </div>
     )
 }
