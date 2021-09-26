@@ -10,6 +10,18 @@
   --accent-color-hover: rgb(57, 57, 133);
   --link-text-color: rgb(223, 223, 223);
   --link-text-color-hover: rgb(255, 255, 255);
+  --boxShadow-light-effect-color: rgba(33, 33, 253, 0.589);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 9em;
 }
 
 body {

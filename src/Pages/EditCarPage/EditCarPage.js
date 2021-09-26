@@ -14,6 +14,8 @@ const EditCarPage = (props) => {
 
     const [currentCar, setCurrentCar] = useState({});
 
+    useEffect(()=> document.title = 'Редактировать машину', [])
+
     useEffect(()=> {
         if(currentCar.id){
             editCar()        

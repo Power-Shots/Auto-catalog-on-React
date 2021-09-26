@@ -30,7 +30,7 @@ const CarGalleryPage = () => {
     });
 
     useEffect(()=> {
-      
+      document.title = 'Каталог машин';
       getMaxPrice();
     }, []);
     
@@ -39,7 +39,6 @@ const CarGalleryPage = () => {
     }, [selectedCategory, sortedBy, priceValue])
 
     const getMaxPrice = () => {
-      console.log('popopoiiug')
       let priceArr = [];
       for(let i=0; i<carsList.length; i++){
         priceArr.push(carsList[i].price);

@@ -9,6 +9,8 @@ const AddCarPage = (props) => {
         
     });
 
+    useEffect(()=> document.title = 'Добавить машину', [])
+
     useEffect(() => {
         addNewCar()
         

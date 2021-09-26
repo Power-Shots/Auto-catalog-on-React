@@ -34,7 +34,7 @@ const CarForm = ({car, setCar, deleteCar}) => {
         engine: /^[0-9.,]{1,4}$/,
         price: /^[0-9]{1,8}$/,
         img: /^[a-zA-Zа-яА-Я0-9 -_./'"]{1,}$/,
-        description: /^[a-zA-Zа-яА-Я0-9 -_./'"]{1,}$/
+        description: /^[\s\S]{1,}$/
     }
 
     const formInputs = {

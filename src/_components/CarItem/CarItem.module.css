@@ -14,7 +14,7 @@
     padding: 0 10px;
 }
 
-.item .info .editBtn {
+.item .info .detailsBtn {
     max-width: 200px;
     position: relative;
     bottom: 0;
@@ -22,6 +22,8 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+    border: none;
+    outline: none;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--link-text-color);
@@ -29,7 +31,7 @@
     border-radius: 10px;
 }
 
-.item .info .editBtn:hover {
+.item .info .detailsBtn:hover {
     color: var(--link-text-color-hover);
     background-color: var(--accent-color-hover);
 }

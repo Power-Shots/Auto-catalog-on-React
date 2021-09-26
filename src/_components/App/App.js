@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusCircle} from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 import CarGalleryPage from '../../Pages/CarGalleryPage/CarGalleryPage';
 import AddCarPage from '../../Pages/AddCarPage/AddCarPage';
 import EditCarPage from '../../Pages/EditCarPage/EditCarPage';

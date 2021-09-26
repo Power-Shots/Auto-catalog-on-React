@@ -1,0 +1,139 @@
+.modalWraper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 900;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.modalWraper .cover {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 901;
+    background-color: rgba(0, 0, 0, 0.020);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+}
+
+.modalWraper .modalWindow {
+    margin: 50px 0;
+    max-width: 900px;
+    width: 96%;
+    background-color: #fff;
+    min-height: 300px;
+    max-height: 90%;
+    overflow: auto;
+    padding: 10px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 920;
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px 0px;
+    
+}
+
+.modalWindow .closeModalBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--accent-color);
+    color: var(--link-text-color);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 5px 0px;
+}
+
+.modalWindow .closeModalBtn span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.01s linear;
+}
+
+.modalWindow .closeModalBtn:hover {
+    font-size: 25px;
+    color: var(--link-text-color-hover);
+    background-color: var(--accent-color-hover);
+    /* transform: rotate(180deg); */
+}
+
+.modalWindow .aboutCarInfo {
+    display: grid;
+    grid-template-columns: minmax(300px, 3fr) 2fr;
+    grid-gap: 10px;
+}
+
+.modalWindow .aboutCarInfo .imgBlock img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.modalWindow .aboutCarInfo .shortInfo {
+    padding-top: 20px;
+    list-style: none;
+    text-align: left;
+}
+
+.modalWindow .aboutCarInfo .shortInfo li {
+    padding: 5px 0;
+    margin: 5px 0;
+    border-bottom: 1px solid var(--body-bg-color);
+}
+
+.modalWindow .aboutCarInfo .shortInfo li span {
+    font-weight: bold;
+}
+
+.description {
+    margin-top: 25px;
+    text-align: left;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid var(--body-bg-color)
+}
+
+.btsBlock {
+    display: flex;
+    justify-content: end;
+}
+
+.btsBlock .editBtn {
+    margin-top: 25px;
+    max-width: 200px;
+    position: relative;
+    bottom: 0;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--link-text-color);
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 5px 0px;
+}
+
+.btsBlock .editBtn:hover {
+    color: var(--link-text-color-hover);
+    background-color: var(--accent-color-hover);
+}
