@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Auto-catalog-on-React/static/css/main.50fdacdb.chunk.css",
-    "main.js": "/Auto-catalog-on-React/static/js/main.2ac97012.chunk.js",
-    "main.js.map": "/Auto-catalog-on-React/static/js/main.2ac97012.chunk.js.map",
+    "main.js": "/Auto-catalog-on-React/static/js/main.ff0d6abe.chunk.js",
+    "main.js.map": "/Auto-catalog-on-React/static/js/main.ff0d6abe.chunk.js.map",
     "runtime-main.js": "/Auto-catalog-on-React/static/js/runtime-main.b2c74cb9.js",
     "runtime-main.js.map": "/Auto-catalog-on-React/static/js/runtime-main.b2c74cb9.js.map",
     "static/css/2.8e54585f.chunk.css": "/Auto-catalog-on-React/static/css/2.8e54585f.chunk.css",
-    "static/js/2.54eac1ff.chunk.js": "/Auto-catalog-on-React/static/js/2.54eac1ff.chunk.js",
-    "static/js/2.54eac1ff.chunk.js.map": "/Auto-catalog-on-React/static/js/2.54eac1ff.chunk.js.map",
+    "static/js/2.3df7a2d0.chunk.js": "/Auto-catalog-on-React/static/js/2.3df7a2d0.chunk.js",
+    "static/js/2.3df7a2d0.chunk.js.map": "/Auto-catalog-on-React/static/js/2.3df7a2d0.chunk.js.map",
     "index.html": "/Auto-catalog-on-React/index.html",
     "static/css/2.8e54585f.chunk.css.map": "/Auto-catalog-on-React/static/css/2.8e54585f.chunk.css.map",
     "static/css/main.50fdacdb.chunk.css.map": "/Auto-catalog-on-React/static/css/main.50fdacdb.chunk.css.map",
-    "static/js/2.54eac1ff.chunk.js.LICENSE.txt": "/Auto-catalog-on-React/static/js/2.54eac1ff.chunk.js.LICENSE.txt",
+    "static/js/2.3df7a2d0.chunk.js.LICENSE.txt": "/Auto-catalog-on-React/static/js/2.3df7a2d0.chunk.js.LICENSE.txt",
     "static/media/audi-rs7.jpg": "/Auto-catalog-on-React/static/media/audi-rs7.4241c017.jpg",
     "static/media/bmw-m5.jpg": "/Auto-catalog-on-React/static/media/bmw-m5.1c770cda.jpg",
     "static/media/bmw_m8-gran-coupe.jpg": "/Auto-catalog-on-React/static/media/bmw_m8-gran-coupe.a7d25fe1.jpg",
@@ -26,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.b2c74cb9.js",
     "static/css/2.8e54585f.chunk.css",
-    "static/js/2.54eac1ff.chunk.js",
+    "static/js/2.3df7a2d0.chunk.js",
     "static/css/main.50fdacdb.chunk.css",
-    "static/js/main.2ac97012.chunk.js"
+    "static/js/main.ff0d6abe.chunk.js"
   ]
 }
