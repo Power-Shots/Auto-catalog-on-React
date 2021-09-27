@@ -24,7 +24,7 @@ function App() {
       <Router>
       <header>
         <div className="header-container">
-          <h1><Link to="/">Auto catalog on React</Link></h1>
+          <h1><Link to="/">Auto catalog on Reactt</Link></h1>
             <Link className="add-car__btn" to={'/add-car'}>
               <FontAwesomeIcon icon={faPlusCircle}/>
             </Link>
