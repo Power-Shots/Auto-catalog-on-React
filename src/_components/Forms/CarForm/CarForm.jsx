@@ -37,6 +37,17 @@ const CarForm = ({car, setCar, deleteCar}) => {
         description: /^[\s\S]{1,}$/
     }
 
+    const errors = {
+        brand: "Марка должна состоять из минимум одной буквы",
+        model: "Модель должна состоять из минимум одной буквы",
+        color: "Цвет должен состоять из минимум одной буквы",
+        year: "Год должен состоять из 4 цифр",
+        engine: "Объём должен состоять 1-4 цифр",
+        price: "Цена должна состоять 1-8 цифр",
+        img: "Вы не указали ссылку на изображение",
+        description: "Описание обязательно",
+    }
+
     const formInputs = {
         brandInp: createRef(),
         modelInp: createRef(),
@@ -58,6 +69,7 @@ const CarForm = ({car, setCar, deleteCar}) => {
         for(let key in car){
             if( !regEx[key].test(car[key]) ){
                 console.log(`${key}: Ошибка`);
+                alert(errors[key])
                 return false;
             }
         }
