@@ -6,7 +6,7 @@ import App from './_components/App/App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
+    <HashRouter basename="/">
       <App />
     </HashRouter>
   </React.StrictMode>,

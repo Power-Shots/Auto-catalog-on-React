@@ -2,7 +2,7 @@
   "name": "class-work",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://power-shots.github.io/Auto-catalog-on-React/",
+  "homepage": "https://power-shots.github.io/Auto-catalog-on-React",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",

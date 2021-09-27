@@ -32,10 +32,10 @@ function App() {
       </header>
       <main className="main-content">
           <Switch>
-            <Route exact path="/" component={CarGalleryPage}/>
+            <Route exact path="/Auto-catalog-on-React" component={CarGalleryPage}/>
             <Route path="/add-car" component={AddCarPage}/>
             <Route path="/edit-car/:id" component={EditCarPage}/>
-            <Redirect from="*" to='/'/> 
+            <Redirect from="*" to='/Auto-catalog-on-React'/> 
           </Switch>
       </main>
       
