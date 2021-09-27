@@ -35,7 +35,7 @@ function App() {
             <Route exact path="/Auto-catalog-on-React/" component={CarGalleryPage}/>
             <Route path="/Auto-catalog-on-React/add-car" component={AddCarPage}/>
             <Route path="/Auto-catalog-on-React/edit-car/:id" component={EditCarPage}/>
-            <Redirect from="*" to='/Auto-catalog-on-React/'/> 
+            {/* <Redirect from="*" to='/Auto-catalog-on-React/'/>  */}
           </Switch>
       </main>
       
