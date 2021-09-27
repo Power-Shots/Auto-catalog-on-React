@@ -33,7 +33,7 @@ const CarForm = ({car, setCar, deleteCar}) => {
         year: /^[0-9]{4}$/,
         engine: /^[0-9.,]{1,4}$/,
         price: /^[0-9]{1,8}$/,
-        img: /^[a-zA-Zа-яА-Я0-9 -_./'"]{1,}$/,
+        img: /^[\s\S]{1,}$/,
         description: /^[\s\S]{1,}$/
     }
 
@@ -75,7 +75,7 @@ const CarForm = ({car, setCar, deleteCar}) => {
             color: formInputs.colorInp.current.value,
             engine: formInputs.engineInp.current.value,
             price: formInputs.priceInp.current.value,
-            img: formInputs.imgInp.current.value.replace(/^.*\\/, ""),
+            img: formInputs.imgInp.current.value,
             description: formInputs.descriptionInp.current.value
         };
         let isValid = validation(newCar);
@@ -135,7 +135,8 @@ const CarForm = ({car, setCar, deleteCar}) => {
                              labelText="Фото"
                              defaultValue={currentCar.img} 
                              refLink={formInputs.imgInp} 
-                             type="file"/>
+                             type="text"
+                             placeholder={`URL на фото`}/>
 
                 <div className={s.formBtns}>
                     <input className={s.btn} onClick={submit} type="submit" value="Отправить"/> 

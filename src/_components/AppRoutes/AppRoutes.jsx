@@ -18,7 +18,7 @@ const AppRoutes = () => {
       <Route exact path="/" component={CarGalleryPage} />
       <Route path="/add-car" component={AddCarPage} />
       <Route path="/edit-car/:id" component={EditCarPage} />
-      <Redirect from="*" to="/Auto-catalog-on-React" />
+      <Redirect from="*" to="/" />
     </Switch>
   );
 };

@@ -6,7 +6,7 @@ import { useEffect } from 'react/cjs/react.development';
 import { Link } from 'react-router-dom';
 
 const AboutCarModal = ({car, toggleModal}) => {
-    let imgPath = require(`../../../assets/images/${car.img}`).default;
+    // let imgPath = require(`../../../assets/images/${car.img}`).default;
     console.log(car)
     
 
@@ -23,7 +23,8 @@ const AboutCarModal = ({car, toggleModal}) => {
                 </button>
                 <div className={s.aboutCarInfo}>
                     <div className={s.imgBlock}>
-                       <img src={imgPath}/>
+                       {/* <img src={imgPath}/> */}
+                       <img src={car.img}/>
                     </div>
                     <div className={s.info}>
                         <ul className={s.shortInfo}>

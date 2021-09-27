@@ -4,7 +4,7 @@ import AboutCarModal from "../Modals/AboutCarModal/AboutCarModal";
 import s from "./CarItem.module.css";
 
 const CarItem = ({ car }) => {
-  let imgPath = require(`../../assets/images/${car.img}`).default;
+  // let imgPath = require(`../../assets/images/${car.img}`).default;
   const [isShowModal, setIsShowModal] = useState(false);
   
   const toggleModal = ()=> {
@@ -18,7 +18,8 @@ const CarItem = ({ car }) => {
         : ''}
       <div className={s.item}>
         <div className={s.imgBlock}>
-          <img src={imgPath} />
+          {/* <img src={imgPath} /> */}
+          <img src={car.img}/>
         </div>
         <div className={s.info}>
           <p>{car.brand} {car.model}</p>
