@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Auto-catalog-on-React/static/css/main.50fdacdb.chunk.css",
-    "main.js": "/Auto-catalog-on-React/static/js/main.4f616150.chunk.js",
-    "main.js.map": "/Auto-catalog-on-React/static/js/main.4f616150.chunk.js.map",
+    "main.js": "/Auto-catalog-on-React/static/js/main.c071970b.chunk.js",
+    "main.js.map": "/Auto-catalog-on-React/static/js/main.c071970b.chunk.js.map",
     "runtime-main.js": "/Auto-catalog-on-React/static/js/runtime-main.b2c74cb9.js",
     "runtime-main.js.map": "/Auto-catalog-on-React/static/js/runtime-main.b2c74cb9.js.map",
     "static/css/2.8e54585f.chunk.css": "/Auto-catalog-on-React/static/css/2.8e54585f.chunk.css",
@@ -28,6 +28,6 @@
     "static/css/2.8e54585f.chunk.css",
     "static/js/2.e585b19a.chunk.js",
     "static/css/main.50fdacdb.chunk.css",
-    "static/js/main.4f616150.chunk.js"
+    "static/js/main.c071970b.chunk.js"
   ]
 }
