@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/Auto-catalog-on-React/static/css/main.50fdacdb.chunk.css",
+    "main.js": "/Auto-catalog-on-React/static/js/main.cea594de.chunk.js",
+    "main.js.map": "/Auto-catalog-on-React/static/js/main.cea594de.chunk.js.map",
+    "runtime-main.js": "/Auto-catalog-on-React/static/js/runtime-main.b2c74cb9.js",
+    "runtime-main.js.map": "/Auto-catalog-on-React/static/js/runtime-main.b2c74cb9.js.map",
+    "static/css/2.8e54585f.chunk.css": "/Auto-catalog-on-React/static/css/2.8e54585f.chunk.css",
+    "static/js/2.9cc34546.chunk.js": "/Auto-catalog-on-React/static/js/2.9cc34546.chunk.js",
+    "static/js/2.9cc34546.chunk.js.map": "/Auto-catalog-on-React/static/js/2.9cc34546.chunk.js.map",
+    "index.html": "/Auto-catalog-on-React/index.html",
+    "static/css/2.8e54585f.chunk.css.map": "/Auto-catalog-on-React/static/css/2.8e54585f.chunk.css.map",
+    "static/css/main.50fdacdb.chunk.css.map": "/Auto-catalog-on-React/static/css/main.50fdacdb.chunk.css.map",
+    "static/js/2.9cc34546.chunk.js.LICENSE.txt": "/Auto-catalog-on-React/static/js/2.9cc34546.chunk.js.LICENSE.txt",
+    "static/media/audi-rs7.jpg": "/Auto-catalog-on-React/static/media/audi-rs7.4241c017.jpg",
+    "static/media/bmw-m5.jpg": "/Auto-catalog-on-React/static/media/bmw-m5.1c770cda.jpg",
+    "static/media/bmw_m8-gran-coupe.jpg": "/Auto-catalog-on-React/static/media/bmw_m8-gran-coupe.a7d25fe1.jpg",
+    "static/media/cadillac_escalade.jpg": "/Auto-catalog-on-React/static/media/cadillac_escalade.1866a53b.jpg",
+    "static/media/dodge_challenger.jpg": "/Auto-catalog-on-React/static/media/dodge_challenger.652db0e9.jpg",
+    "static/media/land-rover-range-rover.jpg": "/Auto-catalog-on-React/static/media/land-rover-range-rover.d2d33747.jpg",
+    "static/media/mercedes-benz-amg-gt.jpg": "/Auto-catalog-on-React/static/media/mercedes-benz-amg-gt.65d26d70.jpg",
+    "static/media/mercedes-benz-s-class.jpg": "/Auto-catalog-on-React/static/media/mercedes-benz-s-class.88abaa8e.jpg",
+    "static/media/mercedes-benz_c-63-amg.jpg": "/Auto-catalog-on-React/static/media/mercedes-benz_c-63-amg.8c5d578e.jpg",
+    "static/media/mercedes-gle-63-amg.jpg": "/Auto-catalog-on-React/static/media/mercedes-gle-63-amg.781db4ba.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b2c74cb9.js",
+    "static/css/2.8e54585f.chunk.css",
+    "static/js/2.9cc34546.chunk.js",
+    "static/css/main.50fdacdb.chunk.css",
+    "static/js/main.cea594de.chunk.js"
+  ]
+}
