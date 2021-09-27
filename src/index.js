@@ -6,7 +6,7 @@ import App from './_components/App/App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter basename="/">
+    <HashRouter basename="/Auto-catalog-on-React">
       <App />
     </HashRouter>
   </React.StrictMode>,
