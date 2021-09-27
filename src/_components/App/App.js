@@ -35,7 +35,7 @@ function App() {
             <Route exact path="/" component={CarGalleryPage}/>
             <Route path="/add-car" component={AddCarPage}/>
             <Route path="/edit-car/:id" component={EditCarPage}/>
-            <Redirect from="*" to='/'/> 
+            {/* <Redirect from="*" to='/'/>  */}
           </Switch>
       </main>
       
