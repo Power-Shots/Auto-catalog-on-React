@@ -1,5 +1,5 @@
 const SortService = {
-  sortObjs: (arr, key, reverse = false) => {
+  sortObjs(arr, key, reverse = false) {
     let sortedArr = [];
 
     if(key==='price' || key==="year"){
